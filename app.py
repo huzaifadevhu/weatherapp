@@ -110,6 +110,9 @@ def get_weather_icon(weather_code):
     else:
         return '03d'  # Default
 
+# Make sure app is accessible as a module-level variable for gunicorn
+application = app
+
 if __name__ == '__main__':
     # Use Railway's PORT environment variable, default to 5000 for local development
     port = int(os.environ.get('PORT', 5000))
